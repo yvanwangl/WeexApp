@@ -1,0 +1,112 @@
+<template>
+<container style="flex-direction:column;">
+	<div repeat='{{personlist}}' class='item'>
+		<image class="thumb" src="{{pictureUrl}}"></image>
+		<text class='text'>{{name+' '+$index}}</text>
+		<text class='text'>{{age}}</text>
+	</div>
+	<div style='flex-direction:column;'>
+		<wxc-tabbar tab-items=={{tabItems}}></wxc-tabbar>
+	</div>
+</container>
+</template>
+
+<script>
+	require('weex-components');
+	module.exports={
+	 	data:{
+	 		personlist:[
+	 			{
+	 				name:'wangyafei',
+	 				age:25,
+	 				pictureUrl: 'http://t.cn/RGE31hq'
+	 			},
+	 			{
+	 				name:'lihuan',
+	 				age:23,
+	 				pictureUrl: 'http://t.cn/RGE31hq'
+	 			},{
+	 				name:'wangyafei',
+	 				age:25,
+	 				pictureUrl: 'http://t.cn/RGE31hq'
+	 			},
+	 			{
+	 				name:'lihuan',
+	 				age:23,
+	 				pictureUrl: 'http://t.cn/RGE31hq'
+	 			},{
+	 				name:'wangyafei',
+	 				age:25,
+	 				pictureUrl: 'http://t.cn/RGE31hq'
+	 			},
+	 			{
+	 				name:'lihuan',
+	 				age:23,
+	 				pictureUrl: 'http://t.cn/RGE31hq'
+	 			}
+	 		],
+	 		tabItems: [
+	        {
+	          index: 0,
+	          title: 'tab1',
+	          titleColor: '#000000',
+	          icon: '',
+	          image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+	          selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
+	          src: 'component/tabbar/tabbar-item.js?itemId=tab1',
+	          visibility: 'visible',
+	        },
+	        {
+	          index: 1,
+	          title: 'tab2',
+	          titleColor: '#000000',
+	          icon: '',
+	          image: 'http://gtms03.alicdn.com/tps/i3/TB1LEn9MpXXXXaUXpXX9t7RGVXX-46-46.png',
+	          selectedImage: 'http://gtms02.alicdn.com/tps/i2/TB1qysbMpXXXXcnXXXX9t7RGVXX-46-46.png',
+	          src: 'component/tabbar/tabbar-item.js?itemId=tab2',
+	          visibility: 'hidden',
+	        },
+	        {
+	          index: 2,
+	          title: 'tab3',
+	          titleColor: '#000000',
+	          icon: '',
+	          image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
+	          selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
+	          src: 'component/tabbar/tabbar-item.js?itemId=tab3',
+	          visibility: 'hidden',
+	        }
+	      ],
+	 	},
+	 	methods: {
+	      ready: function (e) {
+	        var vm = this;
+	        vm.$on('tabBar.onClick',function(e){
+	          var index = e.detail.index;
+	        });
+	      },
+	    }
+	}
+</script>
+<style>
+.item {
+	flex-direction: row;
+	align-items:center;
+	border-bottom:1px solid rgba(130, 3, 3, 0.99);
+	padding-top:30;
+	padding-bottom:30;
+	padding-left:20;
+	padding-right:20;
+}
+.thumb {
+	width:100;
+	height:100;
+}
+.text {
+	flex:1;
+	text-align:center;
+	font-family:'微软雅黑';
+	font-size:36;
+}
+
+</style>
