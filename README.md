@@ -17,3 +17,7 @@ npm install
 *note: the entry file can be configured in `webpack.config.js`, learn more from [weex-loader](https://www.npmjs.com/package/weex-loader)*
 
 Finally the generated code will be found in `dist` folder.
+
+Here is my [personal page](https://www.yvanwang.com).
+
+Updating...
