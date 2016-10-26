@@ -18,6 +18,6 @@ npm install
 
 Finally the generated code will be found in `dist` folder.
 
-Here is my [personal page](https://www.yvanwang.com).
+Here is my [personal page](http://www.yvanwang.com).
 
 Updating...
